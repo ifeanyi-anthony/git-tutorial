@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors Game</title>
+    <style>
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        font-family: nohemi;
+        background-color: blueviolet;
+      }
+      .game-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 600px;
+        max-height: 450px;
+        margin: 100px auto;
+        background-color: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.267);
+      }
+      .btn-choice {
+        display: flex;
+        justify-content: space-beeen;
+        margin-bottom: 20px;
+      }
+      button {
+        font-size: 14px;
+        font-family: nohemi;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 50px;
+        background-color: blueviolet;
+        color: white;
+        transition: background-color 0.3s;
+        margin: 0 4px;
+      }
+      button:current {
+        background-color: rgb(89, 30, 144);
+      }
+      .results {
+        font-size: 20px;
+        color: #333;
+      }
+      #results-display {
+        text-align: center;
+        font-size: 14px;
+      }
+      #show-result {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <h2>Rock Paper Scissors Game</h2>
+      <div class="btn-choice">
+        <button
+          id=""
+          onclick="
+          let playerChoice = 'rock';
+          let computerChoice = '';
+          let results='';
+          function computerMove()
+          {
+            if (randomNumber === 1){
+            computerChoice='rock';
+          } else if (randomNumber===2) {
+            computerChoice = 'paper';
+          } else if (randomNumber===3){
+            computerChoice = 'scissors';
+          }
+          }
+          computerMove();
+          
+          console.log(playerChoice);
+          console.log(computerChoice);
+          console.log(randomNumber);
+
+            function compareResults1 () {
+              if (computerChoice ==='rock' && playerChoice) {
+                console.log('😒It is a tie');
+                results = '😒It is a tie';
+              } else if (computerChoice ==='paper' && playerChoice){
+                console.log('you did not win');
+                results = '😭You did not win';
+              } else {
+                console.log('you have won!');
+                results = '🎉You won!';
+              }
+            
+          }
+          compareResults1();
+
+          function declareResult() {document.getElementById('results-display').textContent = `you chose ${playerChoice} and Computer chose ${computerChoice}`};
+          declareResult();
+          function showResult() {document.getElementById('show-result').textContent = `${results}`}
+          showResult()
+          function score () {
+
+          }
+          "
+        >
+          rock
+        </button>
+
+        <button
+          onclick="
+        playerChoice = 'paper';
+        randomNumber = Math.trunc(Math.random()*3)+1;
+        computerChoice = '';
+        computerMove();
+        
+        console.log(playerChoice);
+        console.log(computerChoice);
+        console.log(randomNumber);
+
+          function compareResults2 () {
+            if (computerChoice === playerChoice) {
+              console.log('it is a tie');
+              results = '😒It is a tie';
+            } else if (computerChoice ==='scissors' && playerChoice){
+              console.log('You did not win');
+              results = '😭You did not win';
+            } else {
+              console.log('you have won!');
+              results = '🎉You won!';
+            }
+          
+        }
+        compareResults2();
+        function declareResult() {document.getElementById('results-display').textContent = `you chose ${playerChoice} and Computer chose ${computerChoice}.`};
+        declareResult();
+        function showResult() {document.getElementById('show-result').textContent = `${results}`}
+        showResult()
+
+        "
+        >
+          paper
+        </button>
+
+        <button
+          onclick="
+        playerChoice = 'scissors';
+        randomNumber = Math.trunc(Math.random()*3)+1;
+        computerChoice = '';
+        computerMove();
+        
+        console.log(playerChoice);
+        console.log(computerChoice);
+        console.log(randomNumber);
+
+          function compareResults3 () {
+            if (computerChoice === playerChoice) {
+              console.log('it is a tie');
+              results= '😒It is a tie';
+            } else if (computerChoice ==='rock' && playerChoice){
+              console.log('you did not win');
+              results= '😭You did not win';
+            } else {
+              console.log('you have won!');
+              results= '🎉You won!';
+            }
+          
+        }
+        compareResults3();
+        function declareResult() {document.getElementById('results-display').textContent = `you chose ${playerChoice} and Computer chose ${computerChoice}.`};
+        declareResult();
+        function showResult() {document.getElementById('show-result').textContent = `${results}`}
+        showResult()
+        "
+        >
+          scissors
+        </button>
+      </div>
+
+      <div class="results">
+        <p id="results-display"></p>
+        <p id="show-result"></p>
+      </div>
+    </div>
+    <script>
+      /*
+      -what is really the logic of this game
+      - the logic of the game is simple.
+          1. save the value of a player's choice in a variable
+          2. save the value of the computer's choice in a variable.
+          3. then declare a function that compares the two variable.
+            (here the constraints are as follows; if the computer's choice is equal to the player's choice then it's a tie,
+
+            else if the player defeats the computer by the rule of the game then it's a win for the player
+
+            else the player loses)
+          4. then there should also be a variable that stores the result of the game.
+
+      */
+
+      let randomNumber = Math.trunc(Math.random() * 3) + 1;
+
+      function computerMove() {
+        if (randomNumber === 1) {
+          computerChoice = "rock";
+        } else if (randomNumber === 2) {
+          computerChoice = "paper";
+        } else if (randomNumber === 3) {
+          computerChoice = "scissors";
+        }
+      }
+      computerMove();
+
+      function compareResults() {
+        if (computerChoice === playerChoice) {
+          console.log("😒It is a tie");
+          results = "😒It is a tie";
+        } else if (computerChoice === "paper" && playerChoice) {
+          console.log("you did not win");
+          results = "😭You did not win";
+        } else {
+          console.log("you have won!");
+          results = "🎉You won!";
+        }
+      }
+    </script>
+  </body>
+</html>
